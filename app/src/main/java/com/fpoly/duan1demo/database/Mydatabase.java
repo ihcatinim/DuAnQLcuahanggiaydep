@@ -13,12 +13,20 @@ public class Mydatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL(SanPhamDAO.SQL_SANPHAM);
+        sqLiteDatabase.execSQL(HoaDonDAO.SQL_HOADON);
+        sqLiteDatabase.execSQL(HoaDonChiTietDAO.SQL_HDCT);
         sqLiteDatabase.execSQL(KhachHangDAO.SQL_NGUOIDUNG);
+        sqLiteDatabase.execSQL(LoaiSanPhamDAO.SQL_LOAISANPHAM);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + SanPhamDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + HoaDonDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + HoaDonChiTietDAO.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + KhachHangDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + LoaiSanPhamDAO.TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
 }
