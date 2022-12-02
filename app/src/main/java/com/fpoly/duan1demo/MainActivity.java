@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fpoly.duan1demo.fragment.BaoCaoFragment;
+import com.fpoly.duan1demo.fragment.MainFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -46,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent i = getIntent();
         String user = i.getStringExtra("user");
         tvUser.setText("Welcome " + user + " ! ");
+
+        //Fragment tablayout
+        toolbar.setTitle("Trang chủ");
+        replaceFrament(MainFragment.newInstance());
     }
 
 
@@ -55,8 +61,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.menu_Home) {
             toolbar.setTitle("Trang chủ");
+            replaceFrament(MainFragment.newInstance());
         } else if (id == R.id.menu_BaoCao) {
             toolbar.setTitle("Báo cáo");
+            replaceFrament(BaoCaoFragment.newInstance());
         } else if (id == R.id.menu_Exit) {
             finish();
         } else {
