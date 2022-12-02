@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fpoly.duan1demo.activity.DonHangActivity;
 import com.fpoly.duan1demo.fragment.BaoCaoFragment;
 import com.fpoly.duan1demo.fragment.MainFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Fragment tablayout
         toolbar.setTitle("Trang chủ");
         replaceFrament(MainFragment.newInstance());
+
+        //Den gio hang
+        imgGioHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DonHangActivity.class));
+            }
+        });
     }
 
 
