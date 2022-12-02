@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">duan1demo</string>
+    <string name="open_dr">open drawer</string>
+    <string name="close_dr">close drawer</string>
+    <string name="app_name">Quản Lý Bán Hàng</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="thoi_gian">Thời Gian</string>
+    <string name="tat_ca">Tất Cả</string>
 </resources>
